@@ -151,9 +151,45 @@ button.login-btn {
     }
 
     .message-title{
-margin-right:16px;
+      margin-right:16px;
     }
   }
 }
 
+// Homepage
+.cards-container{
+  display:flex;
+  flex-wrap:wrap;
+  .card{
+    margin:10px;
+    padding:14px;
+    max-width:350px;
+
+    .image-container{
+      position:relative;
+      .heart{
+      position:absolute;
+      top:8px;
+      right:8px;
+      color:white;
+      }
+      img{
+        margin-bottom:20px;
+        width:100%;
+        border-radius:12px;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+      }
+    }
+
+    .btn{
+      width:100%;
+    min-height:50px;
+    }
+    .price{
+    margin: 24px 0;
+    }
+
+  }
+}
 

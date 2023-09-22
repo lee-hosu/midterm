@@ -17,5 +17,26 @@
 
   <body>
     <%- include('partials/_header') %>
+    <div class="container">
+      <div class="container-inner">
+        <h1>Buy & Sell</h1>
+        <div class="cards-container">
+          <% products.forEach((product) => { %>
+          <div class="card">
+            <div class="image-container">
+              <img
+                src="<%= product.images %>"
+                alt="<%= product.title %> Image"
+              />
+            </div>
+            <h3 class="title"><%= product.title %></h3>
+            <div class="description"><%= product.description %></div>
+            <div class="price">$<%= Number(product.price).toFixed(2) %></div>
+            <a href=""><button class="btn">View Full Details</button></a>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

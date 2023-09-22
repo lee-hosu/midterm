@@ -25,7 +25,7 @@ CREATE TABLE
     description TEXT,
     price NUMERIC(10, 2),
     category VARCHAR(255),
-    images JSONB,
+    images VARCHAR(255),
     status VARCHAR(50) NOT NULL,
     FOREIGN KEY (sellerId) REFERENCES users (id)
   );

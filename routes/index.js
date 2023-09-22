@@ -1,15 +1,30 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt");
+const db = require("../db/connection");
 
-app.get("/", (req, res) => {
-  // Check if a user is authenticated
-  if (req.session.user) {
-    // User is authenticated, customize the header
-    const userEmail = req.session.user.email;
-    res.render("index", { userEmail, userAuthenticated: true });
-  } else {
-    // User is not authenticated, render the default header
-    res.render("index", { userAuthenticated: false });
+// Your existing route for rendering the index page
+router.get("/", async (req, res) => {
+  try {
+    // Query the database to fetch the list of products
+    const query = `
+      SELECT * FROM products
+      WHERE status = 'Active'
+    `;
+
+    const result = await db.query(query);
+    const products = result.rows;
+
+    // Initialize the user object
+    const user = req.session.user || null;
+
+    res.render("index", {
+      products,
+      user, // Pass the user object
+    });
+  } catch (error) {
+    console.error("Database error:", error);
+    res.status(500).send({ error: "Internal server error" });
   }
 });
+
+module.exports = router;
