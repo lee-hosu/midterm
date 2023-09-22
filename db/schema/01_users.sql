@@ -33,10 +33,12 @@ CREATE TABLE
 CREATE TABLE
   messages (
     id serial PRIMARY KEY,
-    senderId INT NOT NULL,
-    receiverId INT NOT NULL,
-    messageText TEXT,
-    sendDate TIMESTAMPTZ,
-    FOREIGN KEY (senderId) REFERENCES users (id),
-    FOREIGN KEY (receiverId) REFERENCES users (id)
+    sender_id INT NOT NULL,
+    receiver_id INT NOT NULL,
+    message_text TEXT,
+    send_date TIMESTAMP
+    WITH
+      TIME ZONE,
+      FOREIGN KEY (sender_id) REFERENCES users (id),
+      FOREIGN KEY (receiver_id) REFERENCES users (id)
   );

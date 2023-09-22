@@ -131,6 +131,7 @@ button.login-btn {
     border: 2px solid $text-color;
     border-radius:8px;
     padding:24px 16px;
+    margin-bottom:16px;
 
     .card-header {
       display: flex;
@@ -143,6 +144,14 @@ button.login-btn {
       .message{
         font-weight:700;
       }
+    }
+
+    .time{
+      max-width:300px;
+    }
+
+    .message-title{
+margin-right:16px;
     }
   }
 }
