@@ -15,16 +15,16 @@ h1 {
   color: #1b4a56;
   margin-bottom: 34px;
   position: relative;
-}
-h1::before {
-  content: "";
-  height: 4px;
-  width: 32px;
-  background-color: #1b4a56;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
+  &:before {
+    content: "";
+    height: 4px;
+    width: 32px;
+    background-color: #1b4a56;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 .btn {
@@ -35,6 +35,10 @@ h1::before {
   border-radius: 8px;
   min-width: 120px;
   font-size: 16px;
+}
+
+.btn-large{
+  min-height:50px;
 }
 
 form.form-signup input[type=email],
@@ -74,7 +78,7 @@ form.form-signup .signup-btn, form.form-signup .login-btn, form.form-login .sign
   min-height: 40px;
 }
 
-select{
+nav select{
   padding:4px;
   border: none;
   border-bottom: 1px solid $black-color;
@@ -156,14 +160,21 @@ button.login-btn {
   }
 }
 
-// Homepage
+// Homepage - Products
 .cards-container{
   display:flex;
   flex-wrap:wrap;
   .card{
     margin:10px;
     padding:14px;
-    max-width:350px;
+    width:350px;
+
+    .description {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
 
     .image-container{
       position:relative;
@@ -193,3 +204,30 @@ button.login-btn {
   }
 }
 
+// Add Listing
+.addListing{
+  form{
+    display:flex;
+    flex-direction:column;
+
+  }
+  label{
+    font-weight:600;
+    margin-bottom:4px;
+  }
+  input[type=text], input[type=url], input[type=number], textarea ,select{
+      min-height: 50px;
+      border: none;
+      border-radius: 8px;
+      background-color: $lightgray-color;
+      padding: 0 16px;
+      margin-bottom:14px;
+    }
+    textarea{
+      width:100%;
+      overflow-y: auto;;
+      height:140px;
+      padding:14px;
+      resize:none;
+    }
+}

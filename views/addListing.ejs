@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>New Listing</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <script src="/vendor/jquery-3.0.0.js"></script>
+    <script defer src="/scripts/app.js"></script>
+  </head>
+
+  <body>
+    <%- include('partials/_header') %>
+    <div class="container addListing">
+      <div class="container-left">
+        <h1>Create a<br />New Listing</h1>
+      </div>
+      <div class="container-right">
+        <form action="/new/add-listing" method="POST" class="form-add-listing">
+          <label for="title">Title *</label>
+          <input class="form-control" type="text" name="title" required />
+          <label for="price">Price *</label>
+          <input class="form-control" type="number" name="price" required />
+          <label for="Category">Category *</label>
+          <select class="form-control" type="options" name="category" required>
+            <option value="" disabled selected hidden>Please choose</option>
+            <option value="electronics">Electronics</option>
+            <option value="games">Games</option>
+            <option value="clothing">Clothing</option>
+          </select>
+          <label for="image">Image URL *</label>
+          <input
+            class="form-control"
+            type="url"
+            name="image-url"
+            placeholder="https://"
+            required
+          />
+          <label for="description">Description *</label>
+          <textarea
+            class="description-input"
+            name="description"
+            required
+          ></textarea>
+          <button type="submit" class="create-btn btn btn-large">Create</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

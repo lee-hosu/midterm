@@ -20,7 +20,7 @@ CREATE TABLE
 CREATE TABLE
   products (
     id serial PRIMARY KEY,
-    sellerId INT NOT NULL,
+    sellerId INT,
     title VARCHAR(255) NOT NULL,
     description TEXT,
     price NUMERIC(10, 2),

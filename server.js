@@ -44,6 +44,7 @@ const usersRoutes = require("./routes/users");
 const loginRoutes = require("./routes/login");
 const messagesRoutes = require("./routes/messages");
 const indexRoutes = require("./routes/index");
+const addListingRoutes = require("./routes/addListing");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -54,6 +55,7 @@ app.use("/users", usersRoutes);
 app.use("/login", loginRoutes);
 app.use("/messages", messagesRoutes);
 app.use("/", indexRoutes);
+app.use("/new", addListingRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
